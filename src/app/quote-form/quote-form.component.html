@@ -4,7 +4,8 @@
     <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" placeholder="Enter Name"><br>
 
     <label for="quote">Quote</label>
-    <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote" placeholder="What inspires you..."></textarea><br>
+    <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote"
+      placeholder="What inspires you..."></textarea><br>
 
     <label for="author">Author</label>
     <input type="text" id="author" [(ngModel)]='newQuote.author' name="author" placeholder="who said it..."><br>
@@ -13,4 +14,4 @@
   </form>
 </div>
 <app-quote-display [quoteItem]='newQuoteItem()'></app-quote-display>
-
+<app-quote-details [quoteAuthor]='quoteDetails'></app-quote-details>

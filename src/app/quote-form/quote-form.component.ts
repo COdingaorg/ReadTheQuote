@@ -20,8 +20,9 @@ export class QuoteFormComponent implements OnInit {
   newQuotePoster(){
     return this.newQuote.userName
   }
+  quoteDetails = (`Author: ${this.newQuoteAuthor()} Posted by :${this.newQuotePoster()}`);
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
   }
 
 }
