@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuoteClass } from '../quote-class';
 
 @Component({
   selector: 'app-quote-form',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuoteFormComponent implements OnInit {
 
+  //create an initializing class
+  newQuote = new QuoteClass('', '', '');
   constructor() { }
 
   ngOnInit(): void {
