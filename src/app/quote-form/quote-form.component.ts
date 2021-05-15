@@ -10,7 +10,16 @@ export class QuoteFormComponent implements OnInit {
 
   //create an initializing class
   newQuote = new QuoteClass('', '', '');
-  constructor() { }
+  
+  newQuoteItem(){
+    return this.newQuote.quote
+  };
+  newQuoteAuthor(){
+    return this.newQuote.author
+  }
+  newQuotePoster(){
+    return this.newQuote.userName
+  }
 
   ngOnInit(): void {
   }
