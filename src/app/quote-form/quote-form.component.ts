@@ -9,19 +9,22 @@ import { QuoteClass } from '../quote-class';
 export class QuoteFormComponent implements OnInit {
 
   //create an initializing class
-  newQuote = new QuoteClass('', '', '', 0);
-  
-  newQuoteItem(){
+  newQuote = new QuoteClass('', '', '');
+
+  newQuoteItem() {
     return this.newQuote.quote
   };
-  newQuoteAuthor(){
+  newQuoteAuthor() {
     return this.newQuote.author
   };
-  newQuotePoster(){
+  newQuotePoster() {
     return this.newQuote.userName
   };
- votes = this.newQuote.initialVote
-  ngOnInit(): void {  
+  newQuoteVote(){
+    return this.newQuote.initialVote;
+  }; 
+
+  ngOnInit(): void {
   }
 
 }

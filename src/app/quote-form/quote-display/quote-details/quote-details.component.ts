@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-quote-details',
@@ -9,11 +10,11 @@ export class QuoteDetailsComponent implements OnInit {
 
   @Input() quoteAuthor:any;
   @Input() quotePoster:any;
-  @Input() quoteVotes!:number;
 
-  constructor() { }
+ 
 
-  ngOnInit(): void {
+  ngOnInit():any{
+   
   }
-
-}
+  
+  };

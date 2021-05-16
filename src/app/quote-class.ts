@@ -1,5 +1,6 @@
 export class QuoteClass {
-  constructor( public userName:string, public quote:string, public author:string, public initialVote:number){
-    this.initialVote = 0
+  initialVote: number;
+  constructor( public userName:string, public quote:string, public author:string){
+    this.initialVote=0;
   }
 }
