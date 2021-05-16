@@ -4,7 +4,7 @@
   <button type="submit">Toggle Details</button> 
   <span class="voter">
     <button (click)='upClicker()' class="upvote btn btn-light">UpVote</button> | 
-    <button class="downvote btn btn-light">DownVote</button>
+    <button (click)='downClicker()' class="downvote btn btn-light">DownVote</button>
   </span>
 </div>
-<app-quote-details [upVoteClick]='upVoteClick'></app-quote-details>
+<app-quote-details [upVoteClick]='upVoteClick' [downVoteClick]=downVoteClick></app-quote-details>
