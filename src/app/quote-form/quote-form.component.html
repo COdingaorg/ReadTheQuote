@@ -13,5 +13,5 @@
     <button type="submit" class="btn btn-warning">Add Quote</button>
   </form>
 </div>
-<app-quote-display [quoteItem]='newQuoteItem()'></app-quote-display>
-<app-quote-details [quoteAuthor]='quoteDetails()'></app-quote-details>
+<app-quote-display [quoteItem]='newQuoteItem()' ></app-quote-display>
+<app-quote-details [quoteAuthor]='newQuoteAuthor()' [quotePoster]='newQuotePoster()' [quoteVotes]= votes></app-quote-details>

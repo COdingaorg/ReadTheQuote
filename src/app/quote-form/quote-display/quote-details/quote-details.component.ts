@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class QuoteDetailsComponent implements OnInit {
 
   @Input() quoteAuthor:any;
+  @Input() quotePoster:any;
+  @Input() quoteVotes!:number;
 
   constructor() { }
 

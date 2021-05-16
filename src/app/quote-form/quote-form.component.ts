@@ -9,7 +9,7 @@ import { QuoteClass } from '../quote-class';
 export class QuoteFormComponent implements OnInit {
 
   //create an initializing class
-  newQuote = new QuoteClass('', '', '');
+  newQuote = new QuoteClass('', '', '', 0);
   
   newQuoteItem(){
     return this.newQuote.quote
@@ -20,9 +20,7 @@ export class QuoteFormComponent implements OnInit {
   newQuotePoster(){
     return this.newQuote.userName
   };
- quoteDetails(){
-  return ("Author: " +this.newQuoteAuthor() + '  Posted by : '+ this.newQuotePoster())
- };
+ votes = this.newQuote.initialVote
   ngOnInit(): void {  
   }
 
