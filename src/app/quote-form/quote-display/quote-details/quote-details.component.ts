@@ -11,9 +11,10 @@ export class QuoteDetailsComponent implements OnInit {
   @Input() quoteAuthor:any;
   @Input() quotePoster:any;
   @Input() upVoteClick!:Subject<void>;
-  @Input() downVoteClick!:Subject<void>;  
+  @Input() downVoteClick!:Subject<void>;
 
-  votes = 0;
+  upvotes = 0;
+  downvotes =0;
  
 
   ngOnInit():any{
@@ -22,9 +23,9 @@ export class QuoteDetailsComponent implements OnInit {
   }
    
   addVote(){
-    this.votes=this.votes+1
+    this.upvotes=this.upvotes+1
   }
   subVote(){
-    this.votes=this.votes-1
+    this.downvotes=this.downvotes+1
   }
   };

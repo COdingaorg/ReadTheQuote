@@ -1,6 +1,8 @@
 export class QuoteClass {
-  initialVote: number;
+  initialUpVote: number;
+  initialDownVote: number;
   constructor( public userName:string, public quote:string, public author:string){
-    this.initialVote=0;
+    this.initialUpVote=0;
+    this.initialDownVote=0;
   }
 }
