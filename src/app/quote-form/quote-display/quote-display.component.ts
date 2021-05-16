@@ -8,7 +8,11 @@ import { Subject } from 'rxjs';
 })
 export class QuoteDisplayComponent implements OnInit {
 
+  upVoteClick:Subject<void> = new Subject<void>();
 
+  upClicker(){
+    this.upVoteClick.next();
+  }
 
   @Input() quoteItem:string|any;
   

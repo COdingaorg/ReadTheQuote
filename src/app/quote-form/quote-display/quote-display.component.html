@@ -3,7 +3,8 @@
   <p>{{quoteItem}}</p>
   <button type="submit">Toggle Details</button> 
   <span class="voter">
-    <button class="upvote btn btn-light">UpVote</button> | 
+    <button (click)='upClicker()' class="upvote btn btn-light">UpVote</button> | 
     <button class="downvote btn btn-light">DownVote</button>
   </span>
 </div>
+<app-quote-details [upVoteClick]='upVoteClick'></app-quote-details>

@@ -10,11 +10,16 @@ export class QuoteDetailsComponent implements OnInit {
 
   @Input() quoteAuthor:any;
   @Input() quotePoster:any;
+  @Input() upVoteClick!:Subject<void>;
 
+  votes = 0;
  
 
   ngOnInit():any{
-   
+   this.upVoteClick.subscribe(()=> this.addVote())
   }
-  
+   
+  addVote(){
+    this.votes=this.votes+1
+  }
   };
