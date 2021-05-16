@@ -16,12 +16,13 @@ export class QuoteFormComponent implements OnInit {
   };
   newQuoteAuthor(){
     return this.newQuote.author
-  }
+  };
   newQuotePoster(){
     return this.newQuote.userName
-  }
-  quoteDetails = (`Author: ${this.newQuoteAuthor()} Posted by :${this.newQuotePoster()}`);
-
+  };
+ quoteDetails(){
+  return ("Author: " +this.newQuoteAuthor() + '  Posted by : '+ this.newQuotePoster())
+ };
   ngOnInit(): void {  
   }
 
