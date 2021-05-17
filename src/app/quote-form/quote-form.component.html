@@ -1,17 +1,31 @@
 <div id='quoteForm'>
-  <form>
-    <label for="userName">Your Name</label>
-    <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" placeholder="Enter Name"><br>
-
-    <label for="quote">Quote</label>
-    <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote"
-      placeholder="What inspires you..."></textarea><br>
-
-    <label for="author">Author</label>
-    <input type="text" id="author" [(ngModel)]='newQuote.author' name="author" placeholder="who said it..."><br>
+  <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+    <div class="form-group">
+      <label for="userName">Your Name</label>
+      <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" #userName='ngModel' required placeholder="Enter Name">
+      <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+        <p>Name is required</p>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="quote">Quote</label>
+      <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote" #quote='ngModel' required placeholder="What inspires you..."></textarea>
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+        <p>Please Enter Your Quote</p>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input type="text" id="author" placeholder="who said it..." [(ngModel)]='newQuote.author' name="author" #author='ngModel' required>
+      <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+        <p>Author Name is required</p>
+      </div>
+    </div><br>
 
     <button type="submit" class="btn btn-warning">Add Quote</button>
   </form>
 </div>
-<app-quote-display [quoteItem]='newQuoteItem()' ></app-quote-display>
+<app-quote-display [quoteItem]='newQuoteItem()'></app-quote-display>
 <app-quote-details class="clickAssignment" [quoteAuthor]='newQuoteAuthor()' [quotePoster]='newQuotePoster()'></app-quote-details>
+
