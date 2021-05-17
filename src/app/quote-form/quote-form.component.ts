@@ -1,3 +1,4 @@
+import { Quote } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { QuoteClass } from '../quote-class';
 
@@ -7,6 +8,16 @@ import { QuoteClass } from '../quote-class';
   styleUrls: ['./quote-form.component.css']
 })
 export class QuoteFormComponent implements OnInit {
+
+  newQuotesArray: any|QuoteClass[]=[
+    new QuoteClass('Timothy', 'A bird in hand worth more than 10 in bush', 'anonymous'),
+    new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake')
+  ]
+  quotes(){
+    // for (var i=0; i=<newQuotesArray.length; i++){
+     return this.newQuotesArray[0].quote;
+    //}
+  }
 
   //create an initializing class
   newQuote = new QuoteClass('', '', '');
@@ -32,8 +43,8 @@ export class QuoteFormComponent implements OnInit {
   
   ngOnInit(): void {
   }
-
+//push newQuote to newQuotesArray when add quote is clicked
   submitQuote(){
-
+    this.newQuotesArray= this.newQuotesArray.push(this.newQuote)
   }
 }

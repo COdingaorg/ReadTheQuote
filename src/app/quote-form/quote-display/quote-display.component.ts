@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 
+
 @Component({
   selector: 'app-quote-display',
   templateUrl: './quote-display.component.html',
