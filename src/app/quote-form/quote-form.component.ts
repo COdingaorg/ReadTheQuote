@@ -21,6 +21,11 @@ export class QuoteFormComponent implements OnInit {
   //adding the output decorator to addQuote
   @Output() addQuote= new EventEmitter<QuoteClass>();
   @Input() title:any;
+
+  //function that shows and hides details
+  showDetails(index:any){
+    this.quotesItem[index].showQuoteDetails=!this.quotesItem[index].showQuoteDetails;
+  }
   //submit button pushing a new item to quotes array
  
   addQuotetoArray(){
