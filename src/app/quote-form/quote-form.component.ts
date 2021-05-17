@@ -11,6 +11,7 @@ export class QuoteFormComponent implements OnInit {
 
   newQuotesArray: any|QuoteClass[]=[
     new QuoteClass('Timothy', 'A bird in hand worth more than 10 in bush', 'anonymous'),
+    new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake'),
     new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake')
   ]
   quotes(){

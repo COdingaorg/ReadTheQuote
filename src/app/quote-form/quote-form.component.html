@@ -34,7 +34,6 @@
   </ul>
 </div>
 <div class="details">
-  <app-quote-details></app-quote-details>
 </div>
 <div>{{quotes()}}</div>
 <div *ngFor='let newQuoteArrayItem of newQuotesArray'>
@@ -42,6 +41,4 @@
     <li>{{newQuoteArrayItem[0].quote}}</li> 
   </ul>
 </div>
-<app-quote-display [quoteItem]='newQuoteItem()'></app-quote-display>
-<app-quote-details class="clickAssignment" [quoteAuthor]='newQuoteAuthor()' [quotePoster]='newQuotePoster()'></app-quote-details>
 
