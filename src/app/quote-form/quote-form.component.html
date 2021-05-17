@@ -35,11 +35,13 @@
   <!--Display for quotes Added-->
   <div class="col-md-5">
     <h4>Quotes Added</h4>
-    <div *ngFor='let quotesItem of quotesItems; let i = index'>
+    <div *ngFor='let quotesItem of quotesItem'>
       <p>{{quotesItem.quote}}</p>
       <button class="btn btn-warning">Toggle Details</button>
+      <app-quotes-display [quotesItem]='quotesItem'></app-quotes-display>
         <hr>
     </div>
+    <div class="alert alert-warning" *ngIf='newQuotesArray.length<1'>No Items in Archives</div>
   </div>
 </div>
 {{arrayLength}}

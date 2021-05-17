@@ -14,7 +14,7 @@ export class QuoteFormComponent implements OnInit {
     new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake')
   ];
    
-  quotesItems = this.newQuotesArray;
+  quotesItem = this.newQuotesArray;
   //create an initializing class
   newQuote = new QuoteClass('', '', '');
 

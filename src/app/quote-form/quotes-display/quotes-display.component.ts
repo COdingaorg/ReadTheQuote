@@ -8,7 +8,7 @@ import { QuoteClass } from 'src/app/quote-class';
 })
 export class QuotesDisplayComponent implements OnInit {
 
-  @Input() quoteItems:any;  
+  @Input() quotesItem:any|QuoteClass;  
 
   ngOnInit(): void {
   }
