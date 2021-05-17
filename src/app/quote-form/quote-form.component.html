@@ -1,5 +1,5 @@
 <div id='quoteForm'>
-  <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+  <form  #quoteForm='ngForm'>
     <div class="form-group">
       <label for="userName">Your Name</label>
       <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" #userName='ngModel' required placeholder="Enter Name">
@@ -23,6 +23,13 @@
       </div>
     </div><br>
 
-    <button type="submit" class="btn btn-warning">Add Quote</button>
+    <button type="submit" (click)='addQuotetoArray()' class="btn btn-warning">Add Quote</button>
   </form>
+  <p (addQuote)='addNewQuote($event)'></p>
+</div>
+{{arrayLength}}
+<div id="showQuotes">
+  <ul *ngFor='let newQuoteArray of newQuotesArray'>
+    <li>{{newQuoteArray.quote}}</li>
+  </ul>
 </div>
