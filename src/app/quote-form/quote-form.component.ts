@@ -13,16 +13,14 @@ export class QuoteFormComponent implements OnInit {
     new QuoteClass('Timothy', 'A bird in hand worth more than 10 in bush', 'anonymous'),
     new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake'),
     new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake')
-  ]
-  quotes(){
-    // for (var i=0; i=<newQuotesArray.length; i++){
-     return this.newQuotesArray[0].quote;
-    //}
-  }
-
+  ];
+    
   //create an initializing class
   newQuote = new QuoteClass('', '', '');
 
+  quote1(){
+    
+  }
   //adding the output decorator to addQuote
   @Output() addQuote= new EventEmitter<QuoteClass>();
 

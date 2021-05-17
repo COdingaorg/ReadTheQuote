@@ -2,7 +2,7 @@
   <!--Form to add your quotes-->
   <div id='quoteForm' class="col-md-7">
     <form #quoteForm='ngForm'>
-      <div class="form-group">
+      <div class="form-group col-md-6">
         <label for="userName">Your Name</label>
         <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" #userName='ngModel' required
           placeholder="Enter Name">
@@ -10,16 +10,7 @@
           <p>Name is required</p>
         </div>
       </div>
-      <br>
-      <div class="form-group">
-        <label for="quote">Quote</label>
-        <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote" #quote='ngModel' required
-          placeholder="What inspires you...">
-      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
-        <p>Please Enter Your Quote</p>
-      </div></textarea>
-      </div><br>
-      <div class="form-group">
+      <div class="form-group col-md-6">
         <label for="author">Author</label>
         <input type="text" id="author" placeholder="who said it..." [(ngModel)]='newQuote.author' name="author"
           #author='ngModel' required>
@@ -27,6 +18,15 @@
           <p>Author Name is required</p>
         </div>
       </div><br>
+      <div class="form-group col-md-12">
+        <label for="quote">Quote</label>
+        <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote" #quote='ngModel' required
+          placeholder="What inspires you..."></textarea>
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+        <p>Please Enter Your Quote</p>
+      </div>
+      </div><br>
+      
 
       <button type="submit" (click)='addQuotetoArray()' class="btn btn-warning">Add Quote</button>
     </form>
@@ -34,20 +34,13 @@
   <!--Display for quotes Added-->
   <div class="col-md-5">
     <h4>Quotes Added</h4>
-    
+    <app-quotes-display></app-quotes-display>
   </div>
 </div>
 {{arrayLength}}
-<div id="showQuotes">
-  <ul *ngFor='let newQuoteArray of newQuotesArray'>
-    <li>{{newQuoteArray.quote}}</li>
-  </ul>
-</div>
-<div class="details">
-</div>
-<div>{{quotes()}}</div>
-<div *ngFor='let newQuoteArrayItem of newQuotesArray'>
-  <ul>
-    <li>{{newQuoteArrayItem[0].quote}}</li>
-  </ul>
-</div>
+HHHHHHHHHHHHHHHHHH
+<ul>
+  Here
+  <li>{{quote1()}}</li>
+</ul>
+
