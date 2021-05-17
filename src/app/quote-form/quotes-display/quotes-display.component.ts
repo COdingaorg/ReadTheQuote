@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { QuoteClass } from '../../quote-class';
+import { QuoteClass } from 'src/app/quote-class';
 
 @Component({
   selector: 'app-quotes-display',
@@ -8,11 +8,8 @@ import { QuoteClass } from '../../quote-class';
 })
 export class QuotesDisplayComponent implements OnInit {
 
-  @Input() newQuotesArray:any|QuoteClass[];
+  @Input() quoteItems:any;  
 
-  quote(){
-    return this.newQuotesArray[1].quote
-  }
   ngOnInit(): void {
   }
 

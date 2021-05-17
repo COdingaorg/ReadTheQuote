@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, EventEmitter   } from '@angular/core';
-
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { QuoteClass } from '../quote-class';
 
 @Component({
@@ -14,23 +13,21 @@ export class QuoteFormComponent implements OnInit {
     new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake'),
     new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake')
   ];
-    
+   
+  quotesItems = this.newQuotesArray;
   //create an initializing class
   newQuote = new QuoteClass('', '', '');
 
-  quote1(){
-    
-  }
   //adding the output decorator to addQuote
   @Output() addQuote= new EventEmitter<QuoteClass>();
-
+  @Input() title:any;
   //submit button pushing a new item to quotes array
  
   addQuotetoArray(){
     this.newQuotesArray= this.newQuotesArray.push(this.newQuote)
   };
   addNewQuote(quote:any){
-    this.newQuotesArray.push(quote);
+    // this.newQuotesArray.push(quote);
   }
 
   // quotesListing(){
@@ -40,7 +37,7 @@ export class QuoteFormComponent implements OnInit {
   // }
   arrayLength:number = this.newQuotesArray.length;
   ngOnInit(): void {
-    this.submitQuote();
+    // this.submitQuote();
   }
 //push newQuote to newQuotesArray when add quote is clicked
   submitQuote(){
