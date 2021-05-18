@@ -55,7 +55,7 @@ export class QuoteFormComponent implements OnInit {
  
 //adding quote
 submitQuote(){
-  this.newQuotesArray.push(new QuoteClass(this.newQuote.userName, this.newQuote.author, this.newQuote.quote))
+  this.newQuotesArray.push(new QuoteClass(this.newQuote.userName, this.newQuote.quote, this.newQuote.author))
   
 }
 }
