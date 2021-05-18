@@ -10,9 +10,11 @@ export class QuotesDisplayComponent implements OnInit {
 
   @Input() quotesItem: any | QuoteClass;
   @Output() removeItem = new EventEmitter<boolean>();
-  initialUpVotes:number=0;
-  initialDownVotes:number=0;
+  // @Input() initialUpVotes:any;
+  // @Input() initialDownVotes:any;
 
+  @Output() initialUpVotes:number=0;
+  @Output() initialDownVotes:number=0;
   upVoteClick: Subject<void> = new Subject<void>();
   downVoteClick: Subject<void> = new Subject<void>();
 

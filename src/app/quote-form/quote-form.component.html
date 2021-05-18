@@ -1,54 +1,57 @@
-<div class="row">
-  <p>{{title}}</p>
-  <!--Form to add your quotes-->
-  <div id='quoteForm' class="col-md-7">
-    <form #quoteForm='ngForm' (ngSubmit)='submitQuote(); quoteForm.resetForm()'>
-      <div class="form-group col-md-6">
-        <label for="userName">Your Name</label>
-        <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" #userName='ngModel' required
-          placeholder="Enter Name">
-        <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
-          <p>Name is required</p>
+<div class="window">
+  <div class="row">
+    <!--Form to add your quotes-->
+    <div id='quoteForm' class="col-md-7">
+      <form #quoteForm='ngForm' (ngSubmit)='submitQuote(); quoteForm.resetForm()'>
+        <div class="form-group col-md-6">
+          <label for="userName">Your Name</label>
+          <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" #userName='ngModel' required
+            placeholder="Enter Name">
+          <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+            <p>Name is required</p>
+          </div>
         </div>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="author">Author</label>
-        <input type="text" id="author" placeholder="who said it..." [(ngModel)]='newQuote.author' name="author"
-          #author='ngModel' required>
-        <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
-          <p>Author Name is required</p>
-        </div>
-      </div><br>
-      <div class="form-group col-md-12">
-        <label for="quote">Quote</label>
-        <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote" #quote='ngModel' required
-          placeholder="What inspires you..."></textarea>
-        <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
-          <p>Please Enter Your Quote</p>
-        </div>
-      </div><br>
+        <div class="form-group col-md-6">
+          <label for="author">Author</label>
+          <input type="text" id="author" placeholder="who said it..." [(ngModel)]='newQuote.author' name="author"
+            #author='ngModel' required>
+          <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+            <p>Author Name is required</p>
+          </div>
+        </div><br>
+        <div class="form-group col-md-12">
+          <label for="quote">Quote</label>
+          <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote" #quote='ngModel' required
+            placeholder="What inspires you..."></textarea>
+          <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+            <p>Please Enter Your Quote</p>
+          </div>
+        </div><br>
 
 
-      <button type="submit" class="btn btn-success">Add Quote</button>
-    </form>
-  </div>
-  <!--Display for quotes Added-->
-  <div class="col-md-5">
-    <h4>Quotes Added</h4>
-    <div *ngFor='let quotesItem of quotesItem; let i = index'>
-      <p>{{quotesItem.quote}}</p>
-      <button class="btn btn-warning" (click)='showDetails(i)'>Toggle Details</button>
-      <app-quotes-display [quotesItem]='quotesItem' *ngIf='quotesItem.showQuoteDetails'
-        (removeItem)='deleteselect($event, i)'></app-quotes-display>
-      <hr>
+        <button type="submit" class="btn btn-success">Add Quote</button>
+      </form>
     </div>
-    <div class="alert alert-warning" *ngIf='newQuotesArray.length<1'>No Items in Archives</div>
+    <!--Display for quotes Added-->
+    <div class="col-md-5">
+      <h4>Quotes Added</h4>
+      <div *ngFor='let quotesItem of quotesItem; let i = index'>
+        <small *ngIf='this.quotesItem.initialUpVote>10' appHighlight><i>This Quote has More than 10 Votes</i></small>
+        <p>{{quotesItem.quote}}</p>
+
+        <button class="btn btn-warning" (click)='showDetails(i)'>Toggle Details</button>
+        <app-quotes-display [quotesItem]='quotesItem' *ngIf='quotesItem.showQuoteDetails'
+          (removeItem)='deleteselect($event, i)'></app-quotes-display>
+        <hr>
+      </div>
+      <div class="alert alert-warning" *ngIf='newQuotesArray.length<1'>No Items in Archives</div>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <p>Posted By: {{newQuote.userName}}</p>
-    <p>Author: {{newQuote.author}}</p>  
-    <p>Quote: {{newQuote.quote}}</p>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Posted By: {{newQuote.userName}}</p>
+      <p>Author: {{newQuote.author}}</p>
+      <p>Quote: {{newQuote.quote}}</p>
+    </div>
   </div>
 </div>

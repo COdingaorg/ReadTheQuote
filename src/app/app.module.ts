@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { QuotesDisplayComponent } from './quote-form/quotes-display/quotes-display.component';
 import { DateSincePipe } from './date-since.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuoteFormComponent,
     QuotesDisplayComponent,
-    DateSincePipe
+    DateSincePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
