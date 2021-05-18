@@ -4,7 +4,7 @@
     <div id='quoteForm' class="col-md-7">
       <form #quoteForm='ngForm' (ngSubmit)='submitQuote(); quoteForm.resetForm()'>
         <div class="form-group col-md-6">
-          <label for="userName">Your Name</label>
+          <label for="userName">Your Name :</label><br>
           <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" #userName='ngModel' required
             placeholder="Enter Name">
           <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="form-group col-md-6">
-          <label for="author">Author</label>
+          <label for="author">Author :</label><br>
           <input type="text" id="author" placeholder="who said it..." [(ngModel)]='newQuote.author' name="author"
             #author='ngModel' required>
           <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
@@ -20,7 +20,7 @@
           </div>
         </div><br>
         <div class="form-group col-md-12">
-          <label for="quote">Quote</label>
+          <label for="quote">Quote :</label><br>
           <textarea type="text" id="quote" [(ngModel)]='newQuote.quote' name="quote" #quote='ngModel' required
             placeholder="What inspires you..."></textarea>
           <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">

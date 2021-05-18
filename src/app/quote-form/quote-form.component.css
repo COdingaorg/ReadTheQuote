@@ -1,11 +1,47 @@
-input{
+form>input{
   margin: 1%;
   text-align: left;
   position: relative;
   right: 0;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .7);
 }
 .window{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: center;  
+  background-color: rgba(255, 255, 255, .7);
+  width: 100%;
+  height: 100%;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px grey;
+  padding: 5%;
+  backdrop-filter: blur(5px);
+
+}
+.window>input{
+  border-radius: 5px;
+}
+.col-md-5{
+  border: .5px solid grey;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, .7);
+  margin-right: 0px;
+  box-shadow: 2px 3px 5px grey;
+}
+.row>.col-md-12{
+  background-color: rgba(255, 255, 255, .9);
+  border-radius: 0px 5px 5px 0px;
+  position: relative;
+  right: -20px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  backdrop-filter: blur(5px);
+  box-shadow: 2px 3px 5px grey;
+
 }

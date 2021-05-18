@@ -1,5 +1,7 @@
 *{
   padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 .container{
   display: flex;
@@ -7,4 +9,39 @@
   justify-content: center;
   align-items: center;
   margin-bottom: -10px;
+  box-shadow: 2px 3px 5px gray;
+  
+}
+.header{
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  background-image: url('../assets/image/road.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: 100%;
+  background-position: center;
+  margin-bottom: 15px;
+}
+.header>p:nth-child(1){
+  margin-bottom: -50px;
+}
+#appBody{
+  padding: 5%;
+  background-color: rosybrown;
+  background-image: url('../assets/image/free-table-calendar-mockup1.jpg');
+  width: 100%;
+  box-sizing: border-box;
+}
+.titler{
+  text-align: center;
+  background-color: rgba(255, 255, 255, .7);
+  width: 60%;
+  color: black;
+  backdrop-filter: blur(5px);
+  padding: 0%;
+  border: 2px solid white;
+  box-shadow: 2px 3px 5px grey;
 }
