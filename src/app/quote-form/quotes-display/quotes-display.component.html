@@ -1,9 +1,11 @@
 <div class="col-md-12">
  <p><span class="noter">Author : </span>{{quotesItem.author}}</p>
  <p><span class="noter">Posted By : </span>{{quotesItem.userName}}</p>
+ <p><span class="noter">Upvotes : </span>{{initialUpVotes}}</p>
+ <p><span class="noter">DownVotes : </span>{{initialDownVotes}}</p>
 <br>
-<button class="btn btn-success">Upvote</button><button class="btn btn-light">Downvote</button>
+<button class="btn btn-success" (click)="upvote()">Upvote</button><button class="btn btn-light" (click)='downvote()'>Downvote</button>
 <button class="btn btn-danger btn-sm" (click)='deleteQuote(true)'>Delete Quote</button>
-<hr>
 </div>
+
 
