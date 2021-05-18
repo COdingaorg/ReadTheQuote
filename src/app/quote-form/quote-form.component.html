@@ -38,7 +38,7 @@
     <div *ngFor='let quotesItem of quotesItem; let i = index'>
       <p>{{quotesItem.quote}}</p>
       <button class="btn btn-warning" (click)='showDetails(i)'>Toggle Details</button>
-      <app-quotes-display [quotesItem]='quotesItem' *ngIf='quotesItem.showQuoteDetails'></app-quotes-display>
+      <app-quotes-display [quotesItem]='quotesItem' *ngIf='quotesItem.showQuoteDetails' (removeItem)='deleteselect($event, i)'></app-quotes-display>
         <hr>
     </div>
     <div class="alert alert-warning" *ngIf='newQuotesArray.length<1'>No Items in Archives</div>

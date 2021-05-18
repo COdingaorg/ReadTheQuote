@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { QuoteClass } from '../quote-class';
 
 @Component({
@@ -8,30 +8,36 @@ import { QuoteClass } from '../quote-class';
 })
 export class QuoteFormComponent implements OnInit {
 
-  newQuotesArray: any|QuoteClass[]=[
+  newQuotesArray: any | QuoteClass[] = [
     new QuoteClass('Timothy', 'A bird in hand worth more than 10 in bush', 'anonymous'),
     new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake'),
     new QuoteClass('lavender', 'what goes around...comes all the way round', 'Justin Timberlake')
   ];
-   
+
   quotesItem = this.newQuotesArray;
   //create an initializing class
   newQuote = new QuoteClass('', '', '');
 
   //adding the output decorator to addQuote
-  @Output() addQuote= new EventEmitter<QuoteClass>();
-  @Input() title:any;
+  @Output() addQuote = new EventEmitter<QuoteClass>();
+  @Input() title: any;
 
   //function that shows and hides details
-  showDetails(index:any){
-    this.quotesItem[index].showQuoteDetails=!this.quotesItem[index].showQuoteDetails;
+  showDetails(index: any) {
+    this.quotesItem[index].showQuoteDetails = !this.quotesItem[index].showQuoteDetails;
+  }
+  //Delete item function
+  deleteselect(deleteItem:any, index: any) {
+    if (deleteItem) {
+      this.quotesItem.splice(index, 1)
+    }
   }
   //submit button pushing a new item to quotes array
- 
-  addQuotetoArray(){
-    this.newQuotesArray= this.newQuotesArray.push(this.newQuote)
+
+  addQuotetoArray() {
+    this.newQuotesArray = this.newQuotesArray.push(this.newQuote)
   };
-  addNewQuote(quote:any){
+  addNewQuote() {
     // this.newQuotesArray.push(quote);
   }
 
@@ -40,12 +46,12 @@ export class QuoteFormComponent implements OnInit {
   //     return this.newQuotesArray[i].quote;
   //   }
   // }
-  arrayLength:number = this.newQuotesArray.length;
+  arrayLength: number = this.newQuotesArray.length;
   ngOnInit(): void {
     // this.submitQuote();
   }
-//push newQuote to newQuotesArray when add quote is clicked
-  submitQuote(){
-    this.newQuotesArray= this.newQuotesArray.push(this.newQuote)
+  //push newQuote to newQuotesArray when add quote is clicked
+  submitQuote() {
+    // this.newQuotesArray = this.newQuotesArray.push(this.newQuote)
   }
 }
