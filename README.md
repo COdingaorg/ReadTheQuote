@@ -1,7 +1,7 @@
 ## Author
 Caleb Ouma Odinga 
 
-## Caleb-Odinga-My-Portfolio
+## Read-The- Quote
 This Websitemade using angular CLI where a user can view added quotes, add a quote of their own, upvote or down vote on a quote. They can also delete a quote. 
 
 
