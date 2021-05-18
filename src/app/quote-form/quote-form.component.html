@@ -2,7 +2,7 @@
   <p>{{title}}</p>
   <!--Form to add your quotes-->
   <div id='quoteForm' class="col-md-7">
-    <form #quoteForm='ngForm'>
+    <form #quoteForm='ngForm' (ngSubmit)='submitQuote(); quoteForm.resetForm()'>
       <div class="form-group col-md-6">
         <label for="userName">Your Name</label>
         <input type="text" id="userName" [(ngModel)]='newQuote.userName' name="userName" #userName='ngModel' required
@@ -29,7 +29,7 @@
       </div><br>
 
 
-      <button type="submit" (click)='addQuotetoArray()' class="btn btn-warning">Add Quote</button>
+      <button type="submit" class="btn btn-success">Add Quote</button>
     </form>
   </div>
   <!--Display for quotes Added-->
@@ -38,11 +38,18 @@
     <div *ngFor='let quotesItem of quotesItem; let i = index'>
       <p>{{quotesItem.quote}}</p>
       <button class="btn btn-warning" (click)='showDetails(i)'>Toggle Details</button>
-      <app-quotes-display [quotesItem]='quotesItem' *ngIf='quotesItem.showQuoteDetails' (removeItem)='deleteselect($event, i)'></app-quotes-display>
-        <hr>
+      <app-quotes-display [quotesItem]='quotesItem' *ngIf='quotesItem.showQuoteDetails'
+        (removeItem)='deleteselect($event, i)'></app-quotes-display>
+      <hr>
     </div>
     <div class="alert alert-warning" *ngIf='newQuotesArray.length<1'>No Items in Archives</div>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <p>Posted By: {{newQuote.userName}}</p>
+    <p>Author: {{newQuote.author}}</p>  
+    <p>Quote: {{newQuote.quote}}</p>
+  </div>
+</div>
 {{arrayLength}}
-

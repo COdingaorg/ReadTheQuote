@@ -16,8 +16,8 @@ export class QuoteFormComponent implements OnInit {
   ];
 
   quotesItem = this.newQuotesArray;
-  //create an initializing class
-  newQuote = new QuoteClass('', '', '');
+  //create an initializing object for form items
+  newQuote= new QuoteClass('', '', '')
 
   //adding the output decorator to addQuote
   @Output() addQuote = new EventEmitter<QuoteClass>();
@@ -40,18 +40,7 @@ export class QuoteFormComponent implements OnInit {
   initialDownVotes:number= this.quotesItem.initialDownVote;
   //submit button pushing a new item to quotes array
 
-  addQuotetoArray() {
-    this.newQuotesArray = this.newQuotesArray.push(this.newQuote)
-  };
-  addNewQuote() {
-    // this.newQuotesArray.push(quote);
-  }
-
-  // quotesListing(){
-  //   for(var i=0; i<=this.newQuotesArray.length; i++){
-  //     return this.newQuotesArray[i].quote;
-  //   }
-  // }
+  
   arrayLength: number = this.newQuotesArray.length;
   ngOnInit(): void {
     this.upVoteClick.subscribe(()=>this.addvotes);
@@ -63,8 +52,10 @@ export class QuoteFormComponent implements OnInit {
   dedvotes(){
     this.initialDownVotes=this.initialDownVotes-1;
   }
-  //push newQuote to newQuotesArray when add quote is clicked
-  submitQuote() {
-    // this.newQuotesArray = this.newQuotesArray.push(this.newQuote)
-  }
+ 
+//adding quote
+submitQuote(){
+  this.newQuotesArray.push(new QuoteClass(this.newQuote.userName, this.newQuote.author, this.newQuote.quote))
+  
+}
 }
